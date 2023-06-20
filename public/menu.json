@@ -1,0 +1,24 @@
+{
+  "code": 200,
+  "data": [
+    {
+      "path": "/dataScreen",
+      "name": "dataScreen",
+      "component": "/dataScreen/index",
+      "meta": {
+        "title": "大屏适配",
+        "isFull": true
+      }
+    },
+    {
+      "path": "/home/index",
+      "name": "/home/index",
+      "component": "/home/index",
+      "meta": {
+        "title": "首页",
+        "isFull": false
+      }
+    }
+  ],
+  "msg": "成功"
+}
