@@ -15,9 +15,10 @@ declare module "*.jpeg"
 declare module "*.gif"
 declare module "*.bmp"
 declare module "*.tiff"
-    
-    
-    
+
 declare interface Window {
   axiosPromiseArr?: any
 }
+
+declare module "nprogress"
+declare module "element-plus/dist/locale/zh-cn.mjs"

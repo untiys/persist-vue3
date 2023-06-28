@@ -1,13 +1,21 @@
-import type { _RouteRecordBase } from "vue-router"
+declare namespace Menu {
+  interface MenuOptions{
+    path: string;
+    name: string;
+    component?: string | (() => Promise<unknown>);
+    redirect?: string;
+    meta: MetaProps;
+    children?: MenuOptions[];
+  }
 
-// 扩展路由属性
-declare module "vue-router" {
-  // interface _RouteRecordBase {
-  //   hidden?: boolean
-  // }
-
-  interface RouteMeta {
-    title?: string
-    isFull?: boolean
+  interface MetaProps {
+    icon: string;
+    title: string;
+    activeMenu?: string;
+    isLink?: string;
+    isHide?: boolean;
+    isFull: boolean;
+    isAffix?: boolean;
+    isKeepAlive?: boolean;
   }
 }

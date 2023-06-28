@@ -1,0 +1,66 @@
+import { defineStore } from "pinia"
+import { layoutConfig } from "../interface/index"
+import { setLightColor } from "@/utils/color"
+
+export const useLayoutConfig = defineStore({
+  id: "layout",
+  state: (): layoutConfig => ({
+    layoutType: "layoutConventionType",
+    isCollapse: false,
+    // 主题颜色
+    themeColor: "#409eff",
+    preColors: [
+      "#409eff",
+      "#ff8c00",
+      "#ffd700",
+      "#90ee90",
+      "#00ced1",
+      "#1e90ff",
+      "#c71585",
+      "rgba(255, 69, 0, 0.68)",
+      "rgb(255, 120, 0)",
+      "hsv(51, 100, 98)",
+    ],
+  }),
+  getters: {
+    // 不同布局，右侧用户栏颜色不同
+    getAuthBoardColor(state) {
+      const authBoardColors: { [K in string]: string } = {
+        layoutConventionType: "#303133",
+        layoutVerticalType: "#fff",
+      }
+      return authBoardColors[state.layoutType]
+    },
+  },
+  actions: {
+    // 递归获取面包屑
+    getBreadcrumb(
+      menuList: Menu.MenuOptions[],
+      parent: Menu.MenuOptions[] = [],
+      result: { [K in string]: any } = {}
+    ) {
+      for (let e of menuList) {
+        result[e.path] = [...parent, e]
+        if (e.children) {
+          this.getBreadcrumb(e.children, result[e.path], result)
+        }
+      }
+      return result
+    },
+    // 设置布局类型
+    setLayout(type: string) {
+      this.layoutType = type
+    },
+    setThemeColor(color: string) {
+      if (!color) {
+        this.themeColor = "#409eff"
+        setLightColor(color)
+
+        return
+      }
+      this.themeColor = color
+      setLightColor(color)
+    },
+  },
+  persist: true,
+})

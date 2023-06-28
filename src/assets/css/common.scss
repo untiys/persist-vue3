@@ -1,0 +1,25 @@
+:root {
+  --el-menu-bg-color: #fff;
+  --el-border-color-light: #e4e7ed;
+}
+
+#nprogress .bar {
+  background: var(--el-color-primary); // 进度条颜色
+}
+
+#nprogress .spinner {
+  display: none; // 进度条加载的右边的圆圈让不显示
+}
+
+.el-menu {
+  border-right: none !important;
+}
+
+.breadcrumb-enter-active {
+  transition: all 0.2s;
+}
+.breadcrumb-enter-from,
+.breadcrumb-leave-active {
+  opacity: 0;
+  transform: translateX(10px);
+}

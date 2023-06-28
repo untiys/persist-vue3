@@ -1,22 +1,24 @@
 {
   "code": 200,
   "data": [
+     {
+      "path": "/home/index",
+      "name": "/home/index",
+      "component": "/home/index",
+      "meta": {
+        "title": "首页",
+        "isFull": false,
+        "icon":"HomeFilled"
+      }
+    },
     {
       "path": "/dataScreen",
       "name": "dataScreen",
       "component": "/dataScreen/index",
       "meta": {
         "title": "大屏适配",
-        "isFull": true
-      }
-    },
-    {
-      "path": "/home/index",
-      "name": "/home/index",
-      "component": "/home/index",
-      "meta": {
-        "title": "首页",
-        "isFull": false
+        "isFull": true,
+        "icon":"Histogram"
       }
     }
   ],
