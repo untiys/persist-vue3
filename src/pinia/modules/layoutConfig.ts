@@ -8,9 +8,9 @@ export const useLayoutConfig = defineStore({
     layoutType: "layoutConventionType",
     isCollapse: false,
     // 主题颜色
-    themeColor: "#409eff",
+    themeColor: "rgba(64, 158, 255, 1)",
     preColors: [
-      "#409eff",
+      "rgba(64, 158, 255, 1)",
       "#ff8c00",
       "#ffd700",
       "#90ee90",
@@ -53,8 +53,8 @@ export const useLayoutConfig = defineStore({
     },
     setThemeColor(color: string) {
       if (!color) {
-        this.themeColor = "#409eff"
-        setLightColor(color)
+        this.themeColor = "rgba(64, 158, 255, 1)"
+        setLightColor("rgba(64, 158, 255, 1)")
 
         return
       }
