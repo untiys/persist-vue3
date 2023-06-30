@@ -9,4 +9,5 @@ export interface layoutConfig {
   preColors: string[]
   modelType: boolean
   isDeath: boolean
+  isShowFooter: boolean
 }

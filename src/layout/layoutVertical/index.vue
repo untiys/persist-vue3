@@ -23,7 +23,9 @@
     <main class="main">
       <RouterView />
     </main>
-    <footer class="footer">底部</footer>
+    <footer v-show="!isShowFooter" class="footer">
+      2023年 6月30日 作者 - 然也
+    </footer>
   </div>
 </template>
 
@@ -39,6 +41,9 @@ const menuListStore = useMenuList()
 
 const isCollapse = computed(() => {
   return layoutConfig.isCollapse
+})
+const isShowFooter = computed(() => {
+  return layoutConfig.isShowFooter
 })
 
 const menuList = computed(() => {
@@ -94,8 +99,11 @@ const authBoardColor = computed(() => {
     background-color: var(--el-bg-color-page);
   }
   .footer {
-    height: 55px;
-    color: var(--el-text-color-primary);
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-top: 1px solid var(--el-border-color-light);
+    color: var(--el-text-color-secondary);
     background-color: var(--el-menu-bg-color);
   }
 }

@@ -34,7 +34,16 @@
       </div>
       <div class="theme-item">
         <div>哀悼模式</div>
-        <el-switch size="large" v-model="isDeath" inline-prompt />
+        <el-switch size="large" v-model="isDeath" />
+      </div>
+    </div>
+    <div m-b-50px>
+      <el-divider>
+        <el-icon><Setting /></el-icon><span m-l-10px>页面设置</span>
+      </el-divider>
+      <div class="theme-item">
+        <div>隐藏页脚</div>
+        <el-switch size="large" v-model="isShowFooter" />
       </div>
     </div>
   </el-drawer>
@@ -47,7 +56,8 @@ import { Sunny, Moon } from "@element-plus/icons-vue"
 
 defineProps<{ isOpen: boolean }>()
 const layoutConfig = useLayoutConfig()
-let { themeColor, preColors, modelType, isDeath } = storeToRefs(layoutConfig)
+let { themeColor, preColors, modelType, isDeath, isShowFooter } =
+  storeToRefs(layoutConfig)
 </script>
 
 <style lang="scss" scoped>

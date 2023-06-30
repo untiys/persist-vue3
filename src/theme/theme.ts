@@ -12,6 +12,7 @@ export const theme: Record<activeThemeType, { [K in string]: string }> = {
     "--el-menu-hover-color": "var(--el-text-color-primary)",
     "--el-border-color-light": "#e4e7ed",
     "--el-dawder-border-color": "#dcdfe6",
+    "--el-text-color-secondary": "#909399",
   },
   dark: {
     "--el-menu-hover-bg-color": "#000000",
@@ -23,5 +24,6 @@ export const theme: Record<activeThemeType, { [K in string]: string }> = {
     "--el-dawder-border-color": "var(--el-border-color-light)",
     "--el-menu-logo-color": "var(--el-menu-active-color)",
     "--el-menu-hover-color": "var(--el-menu-active-color)",
+    "--el-text-color-secondary": "#A3A6AD",
   },
 }
