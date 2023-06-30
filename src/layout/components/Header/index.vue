@@ -31,6 +31,7 @@ const toggleMenu = () => {
   height: 55px;
   justify-content: space-between;
   border-bottom: 1px solid var(--el-border-color-light);
+  background-color: var(--el-menu-bg-color);
   .header-left {
     display: flex;
     align-items: center;
@@ -40,12 +41,7 @@ const toggleMenu = () => {
       line-height: 55px;
       text-align: center;
       cursor: pointer;
-      background-color: rgb(246, 246, 246);
-
-      &:hover {
-        background-color: rgb(231, 229, 229);
-        transition: 0.3s;
-      }
+      color: var(--el-menu-logo-color);
     }
     .breadcrumb {
       margin-left: 20px;

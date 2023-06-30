@@ -7,4 +7,5 @@ export interface layoutConfig {
   isCollapse: boolean
   themeColor: string
   preColors: string[]
+  modelType: boolean
 }

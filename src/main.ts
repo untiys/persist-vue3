@@ -10,6 +10,7 @@ import "./assets/css/normalize.css"
 import "uno.css"
 
 import "@/assets/css/common.scss"
+import "@/assets/css/el-global.scss"
 
 const app = createApp(App)
 

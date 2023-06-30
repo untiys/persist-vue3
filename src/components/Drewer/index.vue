@@ -22,6 +22,16 @@
           @change="layoutConfig.setThemeColor"
         />
       </div>
+      <div class="theme-item">
+        <div>暗黑模式</div>
+        <el-switch
+          size="large"
+          v-model="modelType"
+          inline-prompt
+          :active-icon="Sunny"
+          :inactive-icon="Moon"
+        />
+      </div>
     </div>
   </el-drawer>
 </template>
@@ -29,9 +39,11 @@
 <script setup lang="ts">
 import { storeToRefs } from "pinia"
 import { useLayoutConfig } from "@/pinia/modules/layoutConfig"
+import { Sunny, Moon } from "@element-plus/icons-vue"
+
 defineProps<{ isOpen: boolean }>()
 const layoutConfig = useLayoutConfig()
-let { themeColor, preColors } = storeToRefs(layoutConfig)
+let { themeColor, preColors, modelType } = storeToRefs(layoutConfig)
 </script>
 
 <style lang="scss" scoped>
@@ -49,6 +61,7 @@ div {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 :deep .el-divider__text {
   display: flex;

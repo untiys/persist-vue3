@@ -63,9 +63,9 @@ const authBoardColor = computed(() => {
   .header {
     display: flex;
     align-items: center;
-    height: 59px;
+    height: 58px;
     background-color: #191a20;
-    color: v-bind(authBoardColor);
+    // color: v-bind(authBoardColor);
     .logo {
       width: 210px;
       display: flex;
@@ -95,6 +95,8 @@ const authBoardColor = computed(() => {
   }
   .footer {
     height: 55px;
+    color: var(--el-text-color-primary);
+    background-color: var(--el-menu-bg-color);
   }
 }
 
@@ -105,6 +107,7 @@ const authBoardColor = computed(() => {
 :deep .el-menu--horizontal > .el-menu-item.is-active {
   color: #fff !important;
   background-color: var(--el-color-primary) !important;
+  border-bottom: 2px solid var(--el-color-primary) !important;
 }
 
 :deep .el-menu-item.is-active:hover {

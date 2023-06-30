@@ -30,4 +30,11 @@ const breadcrumb = computed(() => {
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+:deep .el-breadcrumb__inner {
+  color: var(--el-text-color-primary) !important;
+}
+:deep .el-breadcrumb__separator {
+  color: var(--el-text-color-primary) !important;
+}
+</style>

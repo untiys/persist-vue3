@@ -1,0 +1,30 @@
+.el-drawer {
+  background-color: var(--el-menu-bg-color) !important;
+}
+.el-drawer__header {
+  color: var(--el-menu-logo-color) !important;
+}
+
+.el-divider--horizontal {
+  border-top: 1px solid var(--el-dawder-border-color) !important;
+}
+
+.el-divider__text {
+  background-color: var(--el-menu-bg-color) !important;
+}
+
+.el-dropdown__popper.el-popper {
+  background: var(--el-menu-bg-color) !important;
+}
+.el-dropdown-menu {
+  background: var(--el-menu-bg-color) !important;
+}
+
+.el-dropdown-menu__item {
+  color: var(--el-menu-logo-color) !important;
+  &:hover {
+    color: var(--el-color-primary) !important;
+
+    background-color: var(--el-color-primary-light-1) !important;
+  }
+}

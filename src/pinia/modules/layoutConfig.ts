@@ -21,6 +21,7 @@ export const useLayoutConfig = defineStore({
       "rgb(255, 120, 0)",
       "hsv(51, 100, 98)",
     ],
+    modelType: false, // false为白天模式
   }),
   getters: {
     // 不同布局，右侧用户栏颜色不同

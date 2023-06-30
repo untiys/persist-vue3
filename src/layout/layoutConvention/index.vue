@@ -23,7 +23,7 @@
     </el-aside>
     <div class="layout-right">
       <Header />
-      <div>tabs</div>
+      <!-- <div>tabs</div> -->
       <main class="main">
         <RouterView />
       </main>
@@ -61,7 +61,6 @@ const activeMenu = computed(() => {
   width: 100%;
   height: 100vh;
   display: flex;
-
   &-left {
     height: 100%;
     background-color: var(--el-menu-bg-color);
@@ -82,6 +81,7 @@ const activeMenu = computed(() => {
         font-weight: bold;
         margin-left: 6px;
         white-space: nowrap;
+        color: var(--el-menu-logo-color);
       }
     }
     :deep .el-scrollbar {
@@ -101,6 +101,8 @@ const activeMenu = computed(() => {
   }
   .footer {
     height: 55px;
+    color: var(--el-text-color-primary);
+    background-color: var(--el-menu-bg-color);
   }
 }
 
@@ -111,9 +113,15 @@ const activeMenu = computed(() => {
 :deep .el-menu-item.is-active,
 :deep .el-menu-item.is-active:hover {
   background-color: var(--el-color-primary-light-1) !important;
+  color: var(--el-menu-active-color);
 }
-:deep .el-menu-item:hover {
-  background-color: var(--el-menu-hover-bg-color) !important;
+
+:deep .el-menu-item {
+  color: var(--el-text-color-primary);
+  &:hover {
+    color: var(--el-menu-hover-color);
+    background-color: var(--el-menu-hover-bg-color) !important;
+  }
 }
 :deep .el-menu-item.is-active::before {
   position: absolute;
