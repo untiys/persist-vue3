@@ -22,6 +22,7 @@ export const useLayoutConfig = defineStore({
       "hsv(51, 100, 98)",
     ],
     modelType: false, // false为白天模式
+    isDeath: false, //哀悼模式
   }),
   getters: {
     // 不同布局，右侧用户栏颜色不同

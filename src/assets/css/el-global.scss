@@ -28,3 +28,7 @@
     background-color: var(--el-color-primary-light-1) !important;
   }
 }
+
+.el-popper.is-light .el-popper__arrow::before {
+  background: var(--el-menu-bg-color) !important;
+}

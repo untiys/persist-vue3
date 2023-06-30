@@ -8,4 +8,5 @@ export interface layoutConfig {
   themeColor: string
   preColors: string[]
   modelType: boolean
+  isDeath: boolean
 }

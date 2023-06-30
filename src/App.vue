@@ -22,6 +22,13 @@ watchEffect(() => {
     document.documentElement.style.setProperty(i, styles[i])
   }
 })
+watchEffect(() => {
+  if (layoutConfig.isDeath) {
+    document.getElementsByTagName("html")[0].style.filter = "grayscale(100%)"
+  } else {
+    document.getElementsByTagName("html")[0].style.filter = "grayscale(0)"
+  }
+})
 setLightColor(layoutConfig.themeColor)
 
 const setDarkModel = () => {

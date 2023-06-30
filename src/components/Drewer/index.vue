@@ -32,6 +32,10 @@
           :inactive-icon="Moon"
         />
       </div>
+      <div class="theme-item">
+        <div>哀悼模式</div>
+        <el-switch size="large" v-model="isDeath" inline-prompt />
+      </div>
     </div>
   </el-drawer>
 </template>
@@ -43,7 +47,7 @@ import { Sunny, Moon } from "@element-plus/icons-vue"
 
 defineProps<{ isOpen: boolean }>()
 const layoutConfig = useLayoutConfig()
-let { themeColor, preColors, modelType } = storeToRefs(layoutConfig)
+let { themeColor, preColors, modelType, isDeath } = storeToRefs(layoutConfig)
 </script>
 
 <style lang="scss" scoped>
