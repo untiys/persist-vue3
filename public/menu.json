@@ -1,14 +1,14 @@
 {
   "code": 200,
   "data": [
-     {
+    {
       "path": "/home/index",
       "name": "/home/index",
       "component": "/home/index",
       "meta": {
         "title": "首页",
         "isFull": false,
-        "icon":"HomeFilled"
+        "icon": "HomeFilled"
       }
     },
     {
@@ -18,8 +18,30 @@
       "meta": {
         "title": "大屏适配",
         "isFull": true,
-        "icon":"Histogram"
+        "icon": "Histogram"
       }
+    },
+    {
+      "path": "/sys",
+      "name": "sys",
+      "redirect": "/sys/menuManagement",
+      "meta": {
+        "title": "系统管理",
+        "isFull": false,
+        "icon": "Setting"
+      },
+      "children": [
+        {
+          "path": "/sys/menuManagement",
+          "name": "/sys/menuManagement",
+          "component": "/sys/menuManagement/index",
+          "meta": {
+            "title": "菜单管理",
+            "isFull": false,
+            "icon": "Histogram"
+          }
+        }
+      ]
     }
   ],
   "msg": "成功"

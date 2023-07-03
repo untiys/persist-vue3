@@ -21,6 +21,7 @@ const tabScroll = ref<FormInstance>()
 const isShow = ref(false)
 
 const totalMarginLeft = ref<number>()
+
 // 点击左划按钮
 const scrollLeft = () => {
   const tabScrollLeft = tabScroll.value.offsetLeft
@@ -47,7 +48,8 @@ const scrollRight = () => {
     tabScroll.value.style.marginLeft = tabScrollLeft - 500 + "px"
   }
 }
-onMounted(() => {
+
+const init = () => {
   // 获取总宽度，含隐藏部分
   const widthScroll = tabsRef.value.scrollWidth
   //   获取可视区域宽度，不含隐藏部分
@@ -62,6 +64,9 @@ onMounted(() => {
       totalMarginLeft.value = widthScroll - clientWidth
     })
   }
+}
+onMounted(() => {
+  init()
 })
 </script>
 

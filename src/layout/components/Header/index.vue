@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header-left">
       <div @click="toggleMenu" class="toogle">
-        <el-icon><Guide /></el-icon>
+        <el-icon :size="20"><Operation /></el-icon>
       </div>
       <div class="breadcrumb">
         <Breadcrumb />
@@ -38,10 +38,11 @@ const toggleMenu = () => {
     .toogle {
       width: 55px;
       height: 55px;
-      line-height: 55px;
-      text-align: center;
-      cursor: pointer;
       color: var(--el-menu-logo-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
     .breadcrumb {
       margin-left: 20px;

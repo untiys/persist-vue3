@@ -3,7 +3,7 @@
     <el-sub-menu v-if="subItem.children?.length" :index="subItem.path">
       <template #title>
         <el-icon>
-          <component :is="'Histogram'"></component>
+          <component :is="subItem.meta.icon"></component>
         </el-icon>
         <span>{{ subItem.meta.title }}</span>
       </template>
@@ -24,14 +24,29 @@
   </template>
 </template>
 
-<script setup lang="ts" name="SubMenu">
-const router = useRouter()
+<script lang="ts">
+export default defineComponent({
+  name: "SubMenu",
+  props: ["menuList"],
+  setup() {
+    const router = useRouter()
 
-defineProps<{ menuList: Menu.MenuOptions[] }>()
+    const handleClickMenu = (subItem: Menu.MenuOptions) => {
+      router.push(subItem.path)
+    }
 
-const handleClickMenu = (subItem: Menu.MenuOptions) => {
-  router.push(subItem.path)
-}
+    return {
+      handleClickMenu,
+    }
+  },
+})
+// const router = useRouter()
+
+// defineProps<{ menuList: Menu.MenuOptions[] }>()
+
+// const handleClickMenu = (subItem: Menu.MenuOptions) => {
+//   router.push(subItem.path)
+// }
 </script>
 
 <style lang="scss"></style>
