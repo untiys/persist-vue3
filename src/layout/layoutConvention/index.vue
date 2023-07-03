@@ -23,7 +23,7 @@
     </el-aside>
     <div class="layout-right">
       <Header />
-      <!-- <div>tabs</div> -->
+      <Tabs />
       <main class="main">
         <RouterView />
       </main>
@@ -40,6 +40,7 @@ import { useMenuList } from "@/pinia/modules/menuList"
 
 import SubMenu from "../components/SubMenu/index.vue"
 import Header from "../components/Header/index.vue"
+import Tabs from "../components/Tabs/index.vue"
 
 const route = useRoute()
 const layoutConfig = useLayoutConfig()
