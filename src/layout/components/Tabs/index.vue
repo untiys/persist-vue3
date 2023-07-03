@@ -24,7 +24,7 @@ const totalMarginLeft = ref<number>()
 // 点击左划按钮
 const scrollLeft = () => {
   const tabScrollLeft = tabScroll.value.offsetLeft
-  console.log(tabScroll.value.offsetLeft)
+  //   当tabScrol 左边框距离父盒子为0，或者小于500，直接为0，否则一次加500，往右移动
   if (tabScrollLeft == 0 || Math.abs(tabScrollLeft) < 500) {
     tabScroll.value.style.marginLeft = "0px"
     return
@@ -35,10 +35,12 @@ const scrollLeft = () => {
 }
 // 点击右划
 const scrollRight = () => {
+  // 获取盒子到父盒子的左边距，只读属性，而且没有offsetRight属性
   const tabScrollLeft = tabScroll.value.offsetLeft
   const widthScroll = tabsRef.value.scrollWidth
   const clientWidth = tabsRef.value.clientWidth
-  console.log(tabScrollLeft, widthScroll - clientWidth, totalMarginLeft.value)
+
+  //   当隐藏部分小于500时，直接左边距等于totalMarginLeft 的宽度，否者一次减500，盒子整体左滑
   if (widthScroll - clientWidth <= 500) {
     tabScroll.value.style.marginLeft = -totalMarginLeft.value + "px"
   } else {
@@ -56,6 +58,7 @@ onMounted(() => {
       const widthScroll = tabsRef.value.scrollWidth
       //   获取可视区域宽度，不含隐藏部分
       const clientWidth = tabsRef.value.clientWidth
+      //   记录一下，隐藏的部分宽度，之所以在nextick里写，是因为ishow为true时，左右切换按钮出来，隐藏部分宽度会变化，在上面右划到头的时候，需要设置成这个数值，不然不够精确
       totalMarginLeft.value = widthScroll - clientWidth
     })
   }
