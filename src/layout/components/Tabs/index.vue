@@ -5,7 +5,21 @@
     </div>
     <div :class="['tabs', isShow ? 'tabs-active' : '']" ref="tabsRef">
       <div class="tab-scroll" ref="tabScroll">
-        <span class="tab" v-for="i in 25">设施给</span>
+        <span
+          :class="[
+            'tab',
+            item.path != '/home/index' ? 'tab-nohome' : '',
+            item.path == currentRoute ? 'tab-active' : '',
+          ]"
+          v-for="item in tabs"
+          :key="item.path"
+          @click="handleTab(item.path)"
+          >{{ item.meta.title }}
+          <el-icon
+            @click.stop="closeTab(item.path)"
+            v-if="item.path != '/home/index'"
+            ><Close /></el-icon
+        ></span>
       </div>
     </div>
     <div class="right-btn" @click="scrollRight" v-show="isShow">
@@ -16,6 +30,19 @@
 
 <script setup lang="ts">
 import type { FormInstance } from "element-plus"
+import { useTabsConfig } from "@/pinia/modules/tabsConfig"
+const route = useRoute()
+const router = useRouter()
+const tabsConfig = useTabsConfig()
+
+const tabs = computed(() => {
+  return tabsConfig.tabs
+})
+
+const currentRoute = computed(() => {
+  return route.path
+})
+
 const tabsRef = ref<FormInstance>()
 const tabScroll = ref<FormInstance>()
 const isShow = ref(false)
@@ -48,6 +75,12 @@ const scrollRight = () => {
     tabScroll.value.style.marginLeft = tabScrollLeft - 500 + "px"
   }
 }
+const handleTab = (path: string) => {
+  router.push(path)
+}
+const closeTab = (path: string) => {
+  tabsConfig.deleteTab(path)
+}
 
 const init = () => {
   // 获取总宽度，含隐藏部分
@@ -77,6 +110,10 @@ onMounted(() => {
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
+  padding: 0 10px;
+  background-color: var(--el-menu-bg-color);
+  border-bottom: 1px solid var(--el-border-color-light);
+
   &-active {
     padding: 0 20px;
   }
@@ -109,13 +146,42 @@ onMounted(() => {
   }
   .tab {
     display: inline-block;
-    height: 40px;
-    line-height: 40px;
+    height: 38.5px;
     padding: 0 20px;
     cursor: pointer;
-    // border-bottom: 2px solid red;
     box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    transition: padding 0.3s;
+    font-size: 14px;
+    color: var(--el-text-color-primary);
+    :deep .el-icon {
+      width: 0;
+      transition: all 0.3s;
+    }
+    &-nohome:hover {
+      padding: 0 10px;
+      :deep .el-icon {
+        width: 15px;
+        font-size: 12px;
+        margin-left: 5px;
+      }
+    }
+    &-active:hover {
+      padding: 0 20px;
+    }
+    &-active {
+      color: var(--el-color-primary);
+      border-bottom: 2px solid var(--el-color-primary);
+      :deep .el-icon {
+        width: 15px;
+        font-size: 12px;
+        margin-left: 5px;
+        color: var(--el-color-primary);
+      }
+    }
   }
+
   .tab-scroll {
     transition: margin 0.3s;
   }

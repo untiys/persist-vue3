@@ -25,13 +25,16 @@
 </template>
 
 <script lang="ts">
+import { useTabsConfig } from "@/pinia/modules/tabsConfig"
 export default defineComponent({
   name: "SubMenu",
   props: ["menuList"],
   setup() {
     const router = useRouter()
+    const tabsConfig = useTabsConfig()
 
     const handleClickMenu = (subItem: Menu.MenuOptions) => {
+      tabsConfig.pushTab(subItem)
       router.push(subItem.path)
     }
 

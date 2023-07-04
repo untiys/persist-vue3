@@ -22,9 +22,10 @@ const breadcrumb = computed(() => {
   let breadcrumbs = layoutConfig.getBreadcrumb(menus)[route.path]
 
   if (breadcrumbs[0].path != "/home/index") {
-    breadcrumbs = [
-      { path: "/home/index", meta: { icon: "HomeFilled", title: "首页" } },
-    ]
+    breadcrumbs.unshift({
+      path: "/home/index",
+      meta: { icon: "HomeFilled", title: "首页" },
+    })
   }
   return breadcrumbs
 })

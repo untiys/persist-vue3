@@ -24,6 +24,7 @@ export const useLayoutConfig = defineStore({
     modelType: false, // false为白天模式
     isDeath: false, //哀悼模式
     isShowFooter: false, //是否隐藏页脚
+    breadcrumb: [],
   }),
   getters: {
     // 不同布局，右侧用户栏颜色不同
@@ -49,6 +50,7 @@ export const useLayoutConfig = defineStore({
         }
       }
       return result
+      // this.breadcrumb = result
     },
     // 设置布局类型
     setLayout(type: string) {

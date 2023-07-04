@@ -10,4 +10,12 @@ export interface layoutConfig {
   modelType: boolean
   isDeath: boolean
   isShowFooter: boolean
+  breadcrumb: { [K in string]: any }
+}
+
+export interface TabsConfig {
+  tabs: Menu.MenuOptions[]
+  accessTabs: {
+    [K in string]: boolean
+  }
 }
