@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Card: typeof import('./../components/Card/index.vue')['default']
     ChartBox: typeof import('./../components/ChartBox/index.vue')['default']
+    ChartCard: typeof import('./../components/ChartCard/index.vue')['default']
     Drewer: typeof import('./../components/Drewer/index.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElBadge: typeof import('element-plus/es')['ElBadge']

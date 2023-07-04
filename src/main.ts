@@ -11,6 +11,7 @@ import "uno.css"
 
 import "@/assets/css/common.scss"
 import "@/assets/css/el-global.scss"
+import "@/assets/font/index.css"
 
 const app = createApp(App)
 
