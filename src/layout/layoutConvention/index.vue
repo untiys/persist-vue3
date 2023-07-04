@@ -25,7 +25,13 @@
       <Header />
       <Tabs />
       <main class="main">
-        <RouterView />
+        <router-view v-slot="{ Component, route }">
+          <transition name="fade-transform" mode="out-in">
+            <keep-alive>
+              <component :is="Component" :key="route.fullPath" />
+            </keep-alive>
+          </transition>
+        </router-view>
       </main>
       <footer v-show="!isShowFooter" class="footer">
         2023年 6月30日 作者 - 然也

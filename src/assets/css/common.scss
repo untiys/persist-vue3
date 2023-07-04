@@ -24,6 +24,24 @@
   transform: translateX(10px);
 }
 
+//离开和进入属性
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all 0.2s;
+}
+// 动画入场
+.fade-transform-enter-from {
+  opacity: 0;
+  transition: all 0.2s;
+  transform: translateX(-30px);
+}
+// 动画出场
+.fade-transform-leave-to {
+  opacity: 0;
+  transition: all 0.2s;
+  transform: translateX(30px);
+}
+
 .el-menu--horizontal {
   border: none !important;
 }
