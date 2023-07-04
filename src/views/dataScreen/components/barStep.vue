@@ -1,5 +1,5 @@
 <template>
-  <ChartCard title="事件类型积分采集分析" bgType="2">
+  <ChartCard title="事件类型积分采集分析">
     <ChartBox id="key2" :option="optionBar2" />
   </ChartCard>
 </template>

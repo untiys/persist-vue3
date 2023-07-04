@@ -1,5 +1,5 @@
 <template>
-  <ChartCard title="各部门积分统计" bgType="1">
+  <ChartCard title="各部门积分统计">
     <ChartBox id="key1" :option="optionBar1"
   /></ChartCard>
 </template>

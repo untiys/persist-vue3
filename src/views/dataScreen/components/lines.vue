@@ -1,5 +1,5 @@
 <template>
-  <ChartCard title="近12日赋分统计图" bgType="1"
+  <ChartCard title="近12日赋分统计图"
     ><ChartBox id="key3" :option="optionLine"
   /></ChartCard>
 </template>

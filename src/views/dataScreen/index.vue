@@ -8,6 +8,10 @@
           <div class="item"><barStep /></div>
           <div class="item"><lines /></div>
         </div>
+        <div class="center">
+          <mapBox />
+        </div>
+        <div class="right"></div>
       </div>
     </ScreenAdapter>
   </div>
@@ -17,6 +21,7 @@
 import barCircle from "./components/barCircle.vue"
 import barStep from "./components/barStep.vue"
 import lines from "./components/lines.vue"
+import mapBox from "./components/mapBox.vue"
 </script>
 
 <style lang="scss" scoped>
@@ -38,6 +43,13 @@ import lines from "./components/lines.vue"
     .item {
       height: 33%;
     }
+  }
+  .center {
+    width: auto;
+    flex: 1;
+  }
+  .right {
+    width: 500px;
   }
 }
 </style>
