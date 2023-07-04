@@ -20,6 +20,7 @@
       </div>
       <Theme />
     </header>
+    <Tabs />
     <main class="main">
       <RouterView />
     </main>
@@ -34,6 +35,7 @@ import { useLayoutConfig } from "@/pinia/modules/layoutConfig"
 import { useMenuList } from "@/pinia/modules/menuList"
 import Theme from "../components/Header/Theme/index.vue"
 import SubMenu from "../components/SubMenu/index.vue"
+import Tabs from "../components/Tabs/index.vue"
 
 const route = useRoute()
 const layoutConfig = useLayoutConfig()
@@ -70,7 +72,6 @@ const authBoardColor = computed(() => {
     align-items: center;
     height: 58px;
     background-color: #191a20;
-    // color: v-bind(authBoardColor);
     .logo {
       width: 210px;
       display: flex;
@@ -130,7 +131,20 @@ const authBoardColor = computed(() => {
     background-color: #030304 !important;
   }
 }
-:deep .el-menu--horizontal {
-  border: none;
+
+:deep .el-sub-menu__title {
+  color: #bdbdc0 !important;
+  background-color: #191a20 !important;
+  &:hover {
+    color: #fff !important;
+    background-color: #030304 !important;
+  }
+}
+:deep .el-sub-menu.is-active {
+  .el-sub-menu__title {
+    color: #fff !important;
+    background-color: var(--el-color-primary) !important;
+    border-bottom: 2px solid var(--el-color-primary) !important;
+  }
 }
 </style>

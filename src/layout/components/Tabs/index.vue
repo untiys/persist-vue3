@@ -43,11 +43,11 @@ const currentRoute = computed(() => {
   return route.path
 })
 
-const tabsRef = ref<FormInstance>()
-const tabScroll = ref<FormInstance>()
+const tabsRef = ref<FormInstance | any>()
+const tabScroll = ref<FormInstance | any>()
 const isShow = ref(false)
 
-const totalMarginLeft = ref<number>()
+const totalMarginLeft = ref<number>(0)
 
 // 点击左划按钮
 const scrollLeft = () => {
@@ -84,9 +84,9 @@ const closeTab = (path: string) => {
 
 const init = () => {
   // 获取总宽度，含隐藏部分
-  const widthScroll = tabsRef.value.scrollWidth
+  const widthScroll = tabsRef.value?.scrollWidth
   //   获取可视区域宽度，不含隐藏部分
-  const clientWidth = tabsRef.value.clientWidth
+  const clientWidth = tabsRef.value?.clientWidth
   if (widthScroll > clientWidth) {
     isShow.value = true
     nextTick(() => {
@@ -146,7 +146,7 @@ onMounted(() => {
   }
   .tab {
     display: inline-block;
-    height: 38.5px;
+    height: 40px;
     padding: 0 20px;
     cursor: pointer;
     box-sizing: border-box;
@@ -155,6 +155,7 @@ onMounted(() => {
     transition: padding 0.3s;
     font-size: 14px;
     color: var(--el-text-color-primary);
+    position: relative;
     :deep .el-icon {
       width: 0;
       transition: all 0.3s;
@@ -170,12 +171,19 @@ onMounted(() => {
     &-active:hover {
       padding: 0 20px;
     }
+    &-active::before {
+      content: "";
+      position: absolute;
+      bottom: 0.5px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: var(--el-color-primary);
+    }
     &-active {
       color: var(--el-color-primary);
-      border-bottom: 2px solid var(--el-color-primary);
       :deep .el-icon {
         width: 15px;
-        font-size: 12px;
         margin-left: 5px;
         color: var(--el-color-primary);
       }
