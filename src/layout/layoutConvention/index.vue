@@ -78,7 +78,7 @@ const activeMenu = computed(() => {
     height: 100%;
     background-color: var(--el-menu-bg-color);
     border-right: 1px solid var(--el-border-color-light);
-    transition: 0.3s;
+    transition: 0.28s;
     .logo {
       display: flex;
       align-items: center;

@@ -43,13 +43,4 @@ export default defineComponent({
     }
   },
 })
-// const router = useRouter()
-
-// defineProps<{ menuList: Menu.MenuOptions[] }>()
-
-// const handleClickMenu = (subItem: Menu.MenuOptions) => {
-//   router.push(subItem.path)
-// }
 </script>
-
-<style lang="scss"></style>
