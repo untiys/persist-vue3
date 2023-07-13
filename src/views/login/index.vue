@@ -104,6 +104,10 @@ const login = () => {
       background-color: #fff;
       border-radius: 10px;
       box-shadow: rgba(0, 0, 0, 0.1) 0 0 16px 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       .title {
         font-size: 42px;
         font-weight: bold;

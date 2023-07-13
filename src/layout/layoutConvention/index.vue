@@ -25,13 +25,15 @@
       <Header />
       <Tabs />
       <main class="main">
-        <router-view v-slot="{ Component, route }">
-          <transition name="fade-transform" mode="out-in">
-            <keep-alive>
-              <component :is="Component" :key="route.fullPath" />
-            </keep-alive>
-          </transition>
-        </router-view>
+        <el-scrollbar>
+          <router-view v-slot="{ Component, route }">
+            <transition name="fade-transform" mode="out-in">
+              <keep-alive>
+                <component :is="Component" :key="route.fullPath" />
+              </keep-alive>
+            </transition>
+          </router-view>
+        </el-scrollbar>
       </main>
       <footer v-show="!isShowFooter" class="footer">
         2023年 6月30日 作者 - 然也
@@ -111,6 +113,12 @@ const activeMenu = computed(() => {
     flex: 1;
     padding: 10px 12px;
     background-color: var(--el-bg-color-page);
+    overflow: hidden;
+    :deep(.el-scrollbar) {
+      .el-scrollbar__view {
+        height: 100%;
+      }
+    }
   }
   .footer {
     height: 30px;

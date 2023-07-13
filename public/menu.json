@@ -42,6 +42,28 @@
           }
         }
       ]
+    },
+    {
+      "path": "/pluginSys",
+      "name": "pluginSys",
+      "redirect": "/plugins/page1/index",
+      "meta": {
+        "title": "插件管理",
+        "isFull": false,
+        "icon": "Notebook"
+      },
+      "children": [
+        {
+          "path": "/plugins/page1/index",
+          "name": "/plugins/page1/index",
+          "component": "/plugins/page1/index",
+          "meta": {
+            "title": "插件页一",
+            "isFull": false,
+            "icon": "Menu"
+          }
+        }
+      ]
     }
   ],
   "msg": "成功"
