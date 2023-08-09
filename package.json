@@ -1,6 +1,8 @@
 {
-  "name": "my-h5",
-  "version": "0.0.0",
+  "name": "vue-admin",
+  "version": "1.0.0",
+  "description": "然也的练习项目",
+  "author": "然也",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

@@ -32,6 +32,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    outDir: "vue-admin", //打包文件名
+  },
+  base: "/vue-admin", // 地址栏加根地址
   server: {
     port: 3455,
     host: "0.0.0.0",
